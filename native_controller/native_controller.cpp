@@ -309,13 +309,15 @@ float native::controller::get_right_trigger_float() {
 	return get_right_trigger() / 255.0f;
 }
 
-void native::controller::set_vibration(unsigned short left_motor, unsigned short right_motor) {
+void native::controller::set_vibration(unsigned short left_motor, unsigned short right_motor, const char user_index) {
 	XINPUT_VIBRATION vibe{left_motor,right_motor};
-	XInputSetState(0, &vibe);
+	XInputSetState(user_index, &vibe);
 }
 
 void native::controller::clear_vibration() {
-	set_vibration(0, 0);
+	for(int i = 0; i < 4; i++) {
+		set_vibration(0, 0, i);
+	}
 }
 
 std::vector<controller_button> native::controller::get_functions_of_pressed_buttons() {

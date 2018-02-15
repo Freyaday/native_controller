@@ -40,7 +40,7 @@ namespace native {
 		unsigned char get_right_trigger();
 		float get_right_trigger_float();
 
-		void set_vibration(const unsigned short left_motor, const unsigned short right_motor);//left motor is heavier
+		void set_vibration(const unsigned short left_motor, const unsigned short right_motor, const char user_index);//left motor is heavier
 		void clear_vibration();
 
 		using controller_button = bool(*)();
