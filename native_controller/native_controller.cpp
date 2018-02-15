@@ -316,7 +316,8 @@ void native::controller::set_vibration(unsigned short left_motor, unsigned short
 
 void native::controller::clear_vibration() {
 	for(int i = 0; i < 4; i++) {
-		set_vibration(0, 0, i);
+		if(controllers[i].error==ERROR_SUCCESS)
+			set_vibration(0, 0, i);
 	}
 }
 
