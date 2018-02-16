@@ -47,7 +47,7 @@ namespace native {
 		std::vector<controller_button> get_functions_of_pressed_buttons();
 
 		std::string get_button_name(const controller_button);
-		std::vector<std::string> get_button_names(const std::vector<const controller_button>& buttons);
+		std::vector<std::string> get_button_names(const std::vector<controller_button>& buttons);
 
 		const std::unordered_map<controller_button, std::string>& get_buttons_and_names();
 

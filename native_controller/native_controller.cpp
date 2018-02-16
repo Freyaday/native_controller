@@ -375,7 +375,7 @@ std::string native::controller::get_button_name(const controller_button button_f
 	return input_names.at(button_function);
 }
 
-std::vector<std::string> native::controller::get_button_names(const std::vector<const controller_button>& button_functions) {
+std::vector<std::string> native::controller::get_button_names(const std::vector<controller_button>& button_functions) {
 	std::vector<std::string> names{};
 	for(const controller_button bf : button_functions) {
 		names.emplace_back(get_button_name(bf));
